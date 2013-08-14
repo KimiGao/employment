@@ -3,7 +3,7 @@ module IdentifyGenerator
   extend ActiveSupport::Concern
 
   included do
-    before_create :generate_identify
+    before_validation :generate_identify
   end
 
   def generate_identify

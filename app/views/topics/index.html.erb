@@ -1,33 +1,21 @@
-<h1>Listing topics</h1>
+<div>
+  <h1>招聘信息</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Identify</th>
-      <th>Title</th>
-      <th>Href</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @topics.each do |topic| %>
+  <table class='table table-striped table-bordered table-hover'>
+    <thead>
       <tr>
-        <td><%= topic.identify %></td>
-        <td><%= topic.title %></td>
-        <td><%= topic.href %></td>
-        <td><%= topic.date %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>标题</th>
+        <th>发布时间</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
+    <tbody>
+      <% @topics.each do |topic| %>
+        <tr>
+          <td><%= link_to topic.title, topic.href, target: '_blank' %></td>
+          <td><%= topic.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
