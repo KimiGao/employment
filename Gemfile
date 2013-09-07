@@ -37,6 +37,7 @@ end
 gem 'employ_crawler', git: 'git://github.com/KimiGao/employ_crawler.git'
 
 gem 'rails_config'
+gem 'kaminari'
 
 group :development, :test do
   gem "rspec"
